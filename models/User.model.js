@@ -11,7 +11,7 @@ const UserSchema = new mongoose.Schema(
       trim: true,
     },
     password: { type: String, required: true },
-    plan: { type: String, enum: ["free", "pro"], default: free },
+    plan: { type: String, enum: ["free", "pro"], default: "free" },
     analysisCount: { type: Number, default: 0 },
     latestAnalysisDate: { type: Date, default: null },
   },
