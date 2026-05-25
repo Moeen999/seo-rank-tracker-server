@@ -26,8 +26,7 @@ export const registerUser = async (req, res) => {
       email,
       password,
     });
-    await User.save();
-    const token = generateToken(user._id);
+    const token = await generateToken(user._id);
     res.status(201).json({
       success: true,
       message: "Registered Succesfully",
