@@ -4,11 +4,12 @@ import {
   loginUser,
   registerUser,
 } from "../controllers/auth.controller.js";
+import auth from "../middleware/auth.js";
 
 const authRouter = Router();
 
 authRouter.post("/register", registerUser);
 authRouter.post("/login", loginUser);
-authRouter.get("/user", getUser);
+authRouter.get("/user", auth, getUser);
 
 export default authRouter;
